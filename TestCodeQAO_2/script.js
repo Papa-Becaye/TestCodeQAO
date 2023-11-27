@@ -5,7 +5,7 @@ function solution(number){
   let tabNaturalNumber = [];
   let i = 1 ;
   let j = 0, sum = 0;
-  while(i <= number){
+  while(i < number){
     if(i % 3 === 0 || i % 5 === 0){
       tabNaturalNumber[j] = i
       sum += i

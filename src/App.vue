@@ -10,8 +10,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Accueil</RouterLink>
-        <RouterLink to="/about">Recherche</RouterLink>
-        <RouterLink to="/a-propos">A propos</RouterLink>
+        <RouterLink to="/">Recherche</RouterLink>
+        <RouterLink to="/">A propos</RouterLink>
       </nav>
       <button id="btn-deconnexion">Déconnexion</button>
     </div>

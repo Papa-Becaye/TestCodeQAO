@@ -1,9 +1,10 @@
-<script>
-
-</script>
-
 <template>
-    <h1>HelloWorld</h1>
+    <div class="infos-banner">
+        <img src="#" alt="">
+        <div class="articles">
+            <p></p>
+        </div>
+    </div>
 </template>
 
 <style>

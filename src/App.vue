@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import IconSearchVue from './components/icons/IconSearch.vue';
-import IconArrow from './components/icons/IconArrow.vue';
 import IconFacebook from './components/icons/IconFacebook.vue';
 import IconInstagram from './components/icons/IconInstagram.vue';
 import IconTwitter from './components/icons/IconTwitter.vue';
@@ -18,39 +16,16 @@ import IconYoutube from './components/icons/IconYoutube.vue';
       <nav>
         <RouterLink to="/about">Accueil</RouterLink>
         <RouterLink to="/search">Galerie</RouterLink>
-        <RouterLink to="/details">A propos</RouterLink>
+        <RouterLink to="/apropos">A propos</RouterLink>
       </nav>
       <button id="btn-deconnexion">Déconnexion</button>
     </div>
   </header>
   <!-- le contenu de notre page de recherche -->
   <div class="section">
-    <div class="row-1">
-      <div class="search_item">
-        <i>
-          <IconSearchVue />
-        </i>
-        <input type="text" placeholder="Rechercher ...">
-      </div>
-      <div class="navigation-btn">
-
-        <div class="previous-btn nav-btn"><span>
-            <IconArrow />
-          </span></div>
-        <div class="nav-btn"><span>1</span></div>
-        <div class="nav-btn">...</div>
-        <div class="nav-btn"><span>452</span></div>
-        <div class="nav-btn">...</div>
-        <div class="nav-btn"><span>8218</span></div>
-        <div class="nav-btn next-btn">
-          <IconArrow />
-        </div>
-
-      </div>
-    </div>
-    <div class="row-2">
+    <!-- <div class="row-2"> -->
       <RouterView />
-    </div>
+    <!-- </div> -->
   </div>
   <footer>
     <div class="footer-left-items">

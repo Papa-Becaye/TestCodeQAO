@@ -24,7 +24,7 @@
   </div>
   <div class="cards">
     <div v-for="(item, key) in objets" :key="item.imageId" @click="($event) => _onClick(event, objets[key])" class="card">
-      <RouterLink to="/details">
+      <RouterLink :to="{name: 'detail', params:{id: item.imageId}}">
         <img v-if="item.url" :src="item.url">
         <img v-else src="../components/imgs/default.png">
         <div id="ban_title">
@@ -32,7 +32,7 @@
           <p v-else class="title">---</p>
           <p v-if="item.artist_title">{{ item.artist_title }}</p>
           <p v-else>---</p>
-        </div> 
+        </div>
       </RouterLink>
     </div>
   </div>
@@ -56,6 +56,7 @@ export default {
 
   data() {
     return {
+      url:"",
       objets: [],
       single_object :{}
     };
@@ -67,7 +68,9 @@ export default {
       
       this.$emit('clicked', this.single_object)
       this.single_object = items.imageId
-     
+      
+      this.url = '/details/' + this.single_object
+      console.log(this.url)
     }
   },
   // methods: {

@@ -1,7 +1,6 @@
 <template >
+    <div class="infos-banner">
 
-    <div class="infos-banner" >
-       
         <div class="ban-image">
             <img v-if="url" :src="url">
             <img v-else src="@/components/imgs/default.png">
@@ -16,11 +15,11 @@
                 <p v-if="artist_title">{{ artist_title }}</p>
                 <p v-else>---</p>
             </div>
-            <div v-html="description" class="dt-description" >
+            <div v-html="description" class="dt-description">
             </div>
             <div class="dt-dimensions">
                 <h3>Dimension :</h3>
-                <p>{{ dimension }}</p> 
+                <p>{{ dimension }}</p>
             </div>
             <h3>Term titles :</h3>
             <div class="dt-term_titles">
@@ -35,21 +34,8 @@
 
 <script>
 import searchView from '@/views/SearchView.vue'
-import {ref} from 'vue'
-
-const onChange = (payload)=>{
-    console.log(payload)
-}
-
-
-// defineProps<{
-//   url?: string
-//   title?: string
-//   artist_title?: string
-//   description?: string
-//   dimension?: string
-//   term_titles?: Array<string>
-// }>()
+import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 
 export default {
 
@@ -63,9 +49,7 @@ export default {
             term_titles: []
         }
     },
-
-    mounted() {
-
+    created() {
         fetch('https://api.artic.edu/api/v1/artworks/', {
             method: "GET"
         })
@@ -74,6 +58,7 @@ export default {
                     .then((newResponse) => {
                         console.log(newResponse.data);
                         let _objets = [];
+                        let detailKey = 0;
                         for (let i = 0; i < newResponse.data.length; i++) {
                             let objet = new Object();
                             objet.artist_title = newResponse.data[i].artist_title;
@@ -88,12 +73,17 @@ export default {
                             }
                             _objets[i] = objet
                         }
-                        this.url = _objets[5].url
-                        this.title = _objets[5].title
-                        this.artist_title = _objets[5].artist_title
-                        this.dimension = _objets[5].dimension
-                        this.description = _objets[5].description
-                        this.term_titles = _objets[5].term_titles
+                        for(let i = 0; i < _objets.length; i++){
+                            if(this.$route.params.id === _objets[i].imageId){
+                                detailKey = i;
+                            }
+                        }
+                        this.url = _objets[detailKey].url
+                        this.title = _objets[detailKey].title
+                        this.artist_title = _objets[detailKey].artist_title
+                        this.dimension = _objets[detailKey].dimension
+                        this.description = _objets[detailKey].description
+                        this.term_titles = _objets[detailKey].term_titles
 
                         // this.imageId[0] = newResponse.data[1].image_id;
                         // this.url = `https://www.artic.edu/iiif/2/${this.imageId[0]}/full/843,/0/default.jpg`
@@ -144,12 +134,18 @@ h2 {
     line-height: normal;
 }
 
+
+.infos-banner .articles .dt-dimensions{
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
 .infos-banner .articles .dt-dimensions p {
     display: flex;
     align-items: center;
-    padding-left: 8px;
+    padding: 8px;
+    /* margin: 8px; */
     width: 100%;
-    height: 47px;
     border-radius: 10px;
     border: 1px solid var(--Brand-200, #F1B5C5);
     background: var(--Brand-100, #FFF2F5);

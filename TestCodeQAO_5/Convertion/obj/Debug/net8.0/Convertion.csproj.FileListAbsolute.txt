@@ -1,0 +1,14 @@
+C:\Users\papa-\source\repos\Convertion\bin\Debug\net8.0\Convertion.exe
+C:\Users\papa-\source\repos\Convertion\bin\Debug\net8.0\Convertion.deps.json
+C:\Users\papa-\source\repos\Convertion\bin\Debug\net8.0\Convertion.runtimeconfig.json
+C:\Users\papa-\source\repos\Convertion\bin\Debug\net8.0\Convertion.dll
+C:\Users\papa-\source\repos\Convertion\bin\Debug\net8.0\Convertion.pdb
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.AssemblyInfoInputs.cache
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.AssemblyInfo.cs
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.csproj.CoreCompileInputs.cache
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.dll
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\refint\Convertion.dll
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.pdb
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\Convertion.genruntimeconfig.cache
+C:\Users\papa-\source\repos\Convertion\obj\Debug\net8.0\ref\Convertion.dll

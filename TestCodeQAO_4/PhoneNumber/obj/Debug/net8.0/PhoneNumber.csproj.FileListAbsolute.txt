@@ -1,0 +1,14 @@
+C:\Users\papa-\source\repos\PhoneNumber\bin\Debug\net8.0\PhoneNumber.exe
+C:\Users\papa-\source\repos\PhoneNumber\bin\Debug\net8.0\PhoneNumber.deps.json
+C:\Users\papa-\source\repos\PhoneNumber\bin\Debug\net8.0\PhoneNumber.runtimeconfig.json
+C:\Users\papa-\source\repos\PhoneNumber\bin\Debug\net8.0\PhoneNumber.dll
+C:\Users\papa-\source\repos\PhoneNumber\bin\Debug\net8.0\PhoneNumber.pdb
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.AssemblyInfoInputs.cache
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.AssemblyInfo.cs
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.csproj.CoreCompileInputs.cache
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.dll
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\refint\PhoneNumber.dll
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.pdb
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\PhoneNumber.genruntimeconfig.cache
+C:\Users\papa-\source\repos\PhoneNumber\obj\Debug\net8.0\ref\PhoneNumber.dll

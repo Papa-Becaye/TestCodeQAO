@@ -57,10 +57,22 @@ namespace Convertion
             static string rgb(int r, int g, int b)
             {
                 string red = convertToHexa(r), green = convertToHexa(g), blue = convertToHexa(b);
-                return (red + green + blue);
+                return ("#" + red + green + blue);
             }
 
-            string hexaColorConvert = rgb(255, 255, 255);
+            Console.WriteLine("Veuillez saisir la valeur de la couleur rouge :");
+            string red = Console.ReadLine();
+            int r = Convert.ToInt32(red);
+
+            Console.WriteLine("Veuillez saisir la valeur de la couleur verte :");
+            string green = Console.ReadLine();
+            int g = Convert.ToInt32(green);
+
+            Console.WriteLine("Veuillez saisir la valeur de la couleur bleue :");
+            string blue = Console.ReadLine();
+            int b = Convert.ToInt32(blue);
+
+            string hexaColorConvert = rgb(r, g, b);
             Console.WriteLine(hexaColorConvert);
         }
     }

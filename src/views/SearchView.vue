@@ -1,8 +1,9 @@
 <template>
+  <loaderView v-if="!isLoaded"></loaderView>
   <div class="row-1">
     <div class="search_item">
       <i>
-        <IconSearchVue/>
+        <IconSearchVue />
       </i>
       <input type="text" placeholder="Rechercher ...">
     </div>
@@ -24,7 +25,7 @@
   </div>
   <div class="cards">
     <div v-for="(item, key) in objets" :key="item.imageId" @click="($event) => _onClick(event, objets[key])" class="card">
-      <RouterLink :to="{name: 'detail', params:{id: item.imageId}}">
+      <RouterLink :to="{ name: 'detail', params: { id: item.imageId } }">
         <img v-if="item.url" :src="item.url">
         <img v-else src="../components/imgs/default.png">
         <div id="ban_title">
@@ -43,6 +44,7 @@
 import IconSearchVue from '../components/icons/IconSearch.vue';
 import IconArrow from '../components/icons/IconArrow.vue';
 import { RouterLink, RouterView } from 'vue-router'
+import loaderView from '@/views/pageLoaderView.vue'
 // import {ref} from 'vue'
 
 // const obj = ref([])
@@ -51,26 +53,26 @@ export default {
 
   components: {
     IconSearchVue,
-    IconArrow
+    IconArrow,
+    loaderView
   },
 
   data() {
     return {
-      url:"",
+      isLoaded: false,
+      url: "",
       objets: [],
-      single_object :{}
+      single_object: {}
     };
   },
   methods: {
     _onClick(event, items) {
       // `this` inside methods points to the current active instance*
-      
-      
+
+
       this.$emit('clicked', this.single_object)
       this.single_object = items.imageId
-      
       this.url = '/details/' + this.single_object
-      console.log(this.url)
     }
   },
   // methods: {
@@ -79,6 +81,10 @@ export default {
       method: "GET"
     })
       .then((response) => {
+       
+        if (response.status === 200) {
+          this.isLoaded = true;
+        }
         response.json()
           .then((newResponse) => {
             // console.log(newResponse.data);
@@ -105,9 +111,14 @@ export default {
       .catch((err) => {
         console.error(err);
       });
+    // document.onreadystatechange = () => {
+    //   if (document.readyState == "complete") {
+    //     this.isLoaded = true;
+    //   }
     // },
-  },
-};
+  }
+}
+
 </script>
 
 <style scoped>

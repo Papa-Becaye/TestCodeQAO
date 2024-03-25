@@ -4,13 +4,20 @@
   --vt-c-white-soft: #f8f8f8;
   --vt-c-white-mute: #f2f2f2;
 
+  --vt-cube-color-st: #8CC271;
+  --vt-cube-color-nd: #69BEEB;
+  --vt-cube-color-rd: #F5AA39;
+  --vt-cube-color-th: #E9643B;
+  
+
   --vt-c-black: #1A0007;
   --vt-c-black-soft: #222222;
+  --vt-c-black-Msoft: #4b0000;
   --vt-c-black-mute: #282828;
   
   --vt-c-red-bg: #FFDAE4;
   --vt-c-red: #B20937;
-  --vt-c-red-soft1: #f54171;
+  --vt-c-red-soft1: #ff4f7e;
   --vt-c-red-soft: #FFF2F5;
   --vt-c-red-mute: #F1B5C5;
 
@@ -39,7 +46,7 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
-
+  
   --section-gap: 160px;
 }
 

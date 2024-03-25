@@ -5,6 +5,10 @@ import DetailView from '../views/DetailView.vue'
 import AboutView from '../views/AproposView.vue'
 //@ts-ignorets
 import AproposView from '../views/About.vue'
+//@ts-ignorets
+import loadingView from '@/views/LoadingView.vue'
+//@ts-ignorets
+import loaderView from '@/views/pageLoaderView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +36,16 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       //@ts-ignorets
       component: () => import('../views/SearchView.vue')
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: loadingView
+    },
+    {
+      path: '/loader',
+      name: 'loaderpage',
+      component: loaderView
     }
   ]
 })

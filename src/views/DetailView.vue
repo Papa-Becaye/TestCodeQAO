@@ -1,4 +1,5 @@
 <template >
+    <loaderView v-if="!isLoaded"></loaderView>
     <div class="infos-banner">
 
         <div class="ban-image">
@@ -36,11 +37,16 @@
 import searchView from '@/views/SearchView.vue'
 import { ref } from 'vue'
 import { useRoute } from 'vue-router'
+import loaderView from '@/views/pageLoaderView.vue'
 
 export default {
 
+    components: {
+    loaderView
+  },
     data() {
         return {
+            isLoaded: false,
             url: "",
             title: "",
             artist_title: "",
@@ -54,6 +60,9 @@ export default {
             method: "GET"
         })
             .then((response) => {
+                if (response.status === 200) {
+                    this.isLoaded = true;
+                }
                 response.json()
                     .then((newResponse) => {
                         console.log(newResponse.data);
@@ -73,8 +82,8 @@ export default {
                             }
                             _objets[i] = objet
                         }
-                        for(let i = 0; i < _objets.length; i++){
-                            if(this.$route.params.id === _objets[i].imageId){
+                        for (let i = 0; i < _objets.length; i++) {
+                            if (this.$route.params.id === _objets[i].imageId) {
                                 detailKey = i;
                             }
                         }
@@ -135,11 +144,12 @@ h2 {
 }
 
 
-.infos-banner .articles .dt-dimensions{
+.infos-banner .articles .dt-dimensions {
     gap: 10px;
     display: flex;
     flex-wrap: wrap;
 }
+
 .infos-banner .articles .dt-dimensions p {
     display: flex;
     align-items: center;
